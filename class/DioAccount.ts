@@ -1,8 +1,8 @@
 export abstract class DioAccount {
   private readonly name: string
   private readonly accountNumber: number
-  balance: number = 0
-  protected status: boolean = true
+  private balance: number = 0
+  private status: boolean = true
 
   constructor(name: string, accountNumber: number) {
     this.name = name
@@ -32,8 +32,16 @@ export abstract class DioAccount {
     console.log('Você não pode sacar')
   }
 
-  getBalance = (): void => {
-    console.log(this.balance)
+  getBalance = (): number => {
+    return this.balance
+  }
+
+  getStatus = (): boolean => {
+    return this.status
+  }
+
+  setBalance = (value: number): void => {
+    this.balance += value
   }
 
   private validateStatus = (): boolean => {
