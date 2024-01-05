@@ -41,7 +41,7 @@ export abstract class DioAccount {
   }
 
   setBalance = (value: number): void => {
-    this.balance += value
+    this.balance = value
   }
 
   private validateStatus = (): boolean => {

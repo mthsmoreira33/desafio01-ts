@@ -8,6 +8,6 @@ export class VipAccount extends DioAccount {
   }
 
   deposit = (value: number) => {
-    this._balance = this._balance + (value + 10)
+    this.setBalance((this._balance = this._balance + (value + 10)))
   }
 }
